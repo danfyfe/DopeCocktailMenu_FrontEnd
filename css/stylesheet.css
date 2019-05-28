@@ -25,3 +25,10 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.recipe {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+}
