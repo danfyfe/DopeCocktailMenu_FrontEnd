@@ -1,1 +1,24 @@
 /* CSS */
+
+.cocktail-image-container{
+  height: 400px;
+  width: 600px;
+  position: relative;
+  margin: 0 auto;
+  background-image: url("https://www.seriouseats.com/2017/12/20171101-eggnog-vicky-wasik-1-1500x1125.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cocktail-btn-container{
+  position: absolute;
+  left: 50%;
+  margin-left: -81px;
+  bottom: 20%;
+}
+
+.cocktail-description {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
