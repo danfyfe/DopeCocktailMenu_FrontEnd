@@ -63,9 +63,14 @@ mainWrapper.addEventListener("click", function(e){
 
   // LIKE BTN
   if (e.target.id === "like-btn") {
-    // console.log(e.target.parentElement.parentElement.parentElement.parentElement.id)
+
     const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.id)
-    // console.log(cocktail.id)
+
+    // console.log(parseInt(e.target.innerText))
+    let likeNum = parseInt(e.target.innerText)
+    ++likeNum
+    e.target.innerText = `${likeNum} Like(s)`
+
     fetch(likesEndPoint, {
       method: "POST",
       headers: {
