@@ -21,7 +21,7 @@ mainWrapper.addEventListener("click", function(e){
         if (cocktail.mood.name === 'Cozy') {
           cocktailWrapper.innerHTML +=
           `
-          <div id="cocktail-container-${cocktail.id}" class="cocktail-container">
+          <div id="${cocktail.id}" class="cocktail-container">
             <div class="cocktail-name"><h2>${cocktail.name}</h2></div>
             <div id="cocktail-image-container" class="cocktail-image-container">
               <img src="${cocktail.img_url}">
@@ -63,14 +63,17 @@ mainWrapper.addEventListener("click", function(e){
 
   // LIKE BTN
   if (e.target.id === "like-btn") {
+    // console.log(e.target.parentElement.parentElement.parentElement.parentElement.id)
+    const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.id)
+    // console.log(cocktail.id)
     fetch(likesEndPoint, {
       method: "POST",
       headers: {
-        "content-type": "application/json",
-        "accept": "application/json"
+        "Content-Type": "application/json",
+        "Accept":"application/json"
       },
       body: JSON.stringify({
-        cocktail_id: 
+        cocktail_id: parseInt(cocktail.id)
       })
     })
 
