@@ -2,6 +2,7 @@
 
 const moodsEndPoint = 'http://localhost:3000/api/v1/moods'
 const cocktailsEndPoint = 'http://localhost:3000/api/v1/cocktails'
+const likesEndPoint = 'http://localhost:3000/api/v1/likes'
 const cocktailContainer = document.querySelector("#cocktail-container")
 const mainWrapper = document.querySelector("#main-wrapper")
 const mainBtnContainer = document.querySelector("#main-btn-container")
@@ -26,13 +27,10 @@ mainWrapper.addEventListener("click", function(e){
               <img src="${cocktail.img_url}">
               <div id="cocktail-btn-container" class="cocktail-btn-container">
 
-                <button id="like-btn" type="button" name="like">Like</button>
-                <button id="recipe-btn" type="button" name="recipe">Recipe</button>
-                <button id="comment-btn" type="button" name="comment">Comment</button>
-
+                <div class="like-num"><span id="like-btn"> ${cocktail.likes.length} Like(s)</span></div>
+                <div class="recipe-btn"><span id="recipe-btn" type="button" name="recipe">View Recipe</span></div>
+                <div class="comment-num"><span id="comment-btn">10 Comment(s)</span></div>
               </div>
-
-
             </div>
 
             <div id="cocktail-description" class="cocktail-description">
@@ -51,9 +49,10 @@ mainWrapper.addEventListener("click", function(e){
     }) // END OF FETCH
   }  // END OF COZY BTN
 
+  // RECIPE BTN
   if (e.target.id === "recipe-btn") {
 
-    const recipe = e.target.parentElement.parentElement.parentElement.querySelector("#recipe")
+    const recipe = e.target.parentElement.parentElement.parentElement.parentElement.querySelector("#recipe")
 
     if (recipe.style.display === "block") {
       recipe.style.display = "none"
@@ -62,8 +61,9 @@ mainWrapper.addEventListener("click", function(e){
     }
   }
 
+  // LIKE BTN
   if (e.target.id === "like-btn") {
-
+    fetch(likesEndPoint)
   }
 
   if (e.target.id) {

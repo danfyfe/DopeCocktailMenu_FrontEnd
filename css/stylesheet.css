@@ -18,16 +18,18 @@
 }
 
 .cocktail-name{
+  width: 400px;
   position: absolute;
   color: white;
   z-index: 100;
   left: 50%;
   top: 100px;
-  margin-left: -35px;
+  margin-left: -200px;
   /* text-align: center; */
 }
-
-
+.cocktail-name h2 {
+  text-align: center;
+}
 .cocktail-image-container{
   height: 400px;
   width: 600px;
@@ -42,8 +44,11 @@
 .cocktail-btn-container{
   position: absolute;
   left: 50%;
-  margin-left: -81px;
-  bottom: 20%;
+  margin-left: -168px;
+  bottom: 10%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
 }
 
 .cocktail-description {
@@ -65,4 +70,13 @@
   margin: 0 auto;
   text-align: center;
   display: none;
+}
+
+.like-num, .comment-num, .recipe-btn {
+  color: #fff;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+
 }
