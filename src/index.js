@@ -63,7 +63,17 @@ mainWrapper.addEventListener("click", function(e){
 
   // LIKE BTN
   if (e.target.id === "like-btn") {
-    fetch(likesEndPoint)
+    fetch(likesEndPoint, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "accept": "application/json"
+      },
+      body: JSON.stringify({
+        cocktail_id: 
+      })
+    })
+
   }
 
   if (e.target.id) {
