@@ -1,17 +1,43 @@
 /* CSS */
+.main-btn-container{
+
+}
+
+
+.cocktail-container{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  /* height: 400px; */
+  width: 600px;
+  position: relative;
+  margin: 10px auto;
+  -webkit-box-shadow: 8px 8px 6px -6px black;
+  -moz-box-shadow: 8px 8px 6px -6px black;
+  box-shadow: 8px 8px 6px -6px black;
+}
+
+.cocktail-name{
+  position: absolute;
+  color: white;
+  z-index: 100;
+  left: 50%;
+  top: 100px;
+  margin-left: -35px;
+  /* text-align: center; */
+}
+
 
 .cocktail-image-container{
   height: 400px;
   width: 600px;
   position: relative;
   margin: 0 auto;
-    overflow: hidden;
+  overflow: hidden;
 }
 .cocktail-image-container img{
   width: 100%;
 }
-
-
 
 .cocktail-btn-container{
   position: absolute;
@@ -21,12 +47,20 @@
 }
 
 .cocktail-description {
-  width: 600px;
+  top: 190px;
+  left: 15%;
+  /* margin-left: -200px; */
+  position: absolute;
+  width: 400px;
   margin: 0 auto;
   text-align: center;
+  font-size: 10px;
+  color: white;
 }
 
 .recipe {
+  position: relative;
+  /* min-height: 300px; */
   width: 600px;
   margin: 0 auto;
   text-align: center;

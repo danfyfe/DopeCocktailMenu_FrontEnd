@@ -16,15 +16,14 @@ mainWrapper.addEventListener("click", function(e){
     fetch(cocktailsEndPoint)
     .then(resp => resp.json())
     .then(function(cocktails){
-      // console.log(cocktails)
-
       cocktails.forEach(function(cocktail){
         if (cocktail.mood.name === 'Cozy') {
           cocktailWrapper.innerHTML +=
           `
           <div id="cocktail-container-${cocktail.id}" class="cocktail-container">
+            <div class="cocktail-name"><h2>${cocktail.name}</h2></div>
             <div id="cocktail-image-container" class="cocktail-image-container">
-            <img src="${cocktail.img_url}">
+              <img src="${cocktail.img_url}">
               <div id="cocktail-btn-container" class="cocktail-btn-container">
 
                 <button id="like-btn" type="button" name="like">Like</button>
@@ -32,10 +31,14 @@ mainWrapper.addEventListener("click", function(e){
                 <button id="comment-btn" type="button" name="comment">Comment</button>
 
               </div>
+
+
             </div>
+
             <div id="cocktail-description" class="cocktail-description">
-              <p>${cocktail.description}</p>
+            <p>${cocktail.description}</p>
             </div>
+
             <div id="recipe" class="recipe">
               <h4>Recipe</h4>
               <p>${cocktail.recipe}</p>
@@ -47,12 +50,30 @@ mainWrapper.addEventListener("click", function(e){
       }) // END OF FOR EACH ITERATION
     }) // END OF FETCH
   }  // END OF COZY BTN
-  const recipe = document.querySelector("#recipe")
 
   if (e.target.id === "recipe-btn") {
-    // debugger
-    console.log(e.target.id)
+
+    const recipe = e.target.parentElement.parentElement.parentElement.querySelector("#recipe")
+
+    if (recipe.style.display === "block") {
+      recipe.style.display = "none"
+    }else {
+      recipe.style.display = "block"
+    }
   }
+
+  if (e.target.id === "like-btn") {
+
+  }
+
+  if (e.target.id) {
+
+  }
+
+
+
+
+
 
   if (e.target.id === 'sophisticated-btn') {
 
