@@ -5,10 +5,13 @@
   width: 600px;
   position: relative;
   margin: 0 auto;
-  background-image: url("https://www.seriouseats.com/2017/12/20171101-eggnog-vicky-wasik-1-1500x1125.jpg");
-  background-size: cover;
-  background-position: center;
+    overflow: hidden;
 }
+.cocktail-image-container img{
+  width: 100%;
+}
+
+
 
 .cocktail-btn-container{
   position: absolute;
