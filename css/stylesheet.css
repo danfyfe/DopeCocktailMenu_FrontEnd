@@ -80,3 +80,7 @@
   margin: 5px;
 
 }
+
+.like-btn-cont, .recipe-btn-cont{
+  padding: 10px;
+}

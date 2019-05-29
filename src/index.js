@@ -27,8 +27,8 @@ mainWrapper.addEventListener("click", function(e){
               <img src="${cocktail.img_url}">
               <div id="cocktail-btn-container" class="cocktail-btn-container">
 
-                <div class="like-num"><span id="like-btn"> ${cocktail.likes.length} Like(s)</span></div>
-                <div class="recipe-btn"><span id="recipe-btn" type="button" name="recipe">View Recipe</span></div>
+                <div class="like-num"><span id="like-btn" class="like-btn-cont"> ${cocktail.likes.length} Like(s)</span></div>
+                <div class="recipe-btn"><span id="recipe-btn" class="recipe-btn-cont" type="button" name="recipe">View Recipe</span></div>
                 <div class="comment-num"><span id="comment-btn">10 Comment(s)</span></div>
               </div>
             </div>
