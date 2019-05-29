@@ -4,6 +4,14 @@ html, body{
   height: 100%;
   margin: 0;
 }
+
+h4 {
+  margin: 0;
+}
+
+form{
+  margin: 10px 0;
+}
 .main-wrapper {
   width: 100%;
   height: 100%;
@@ -32,22 +40,35 @@ html, body{
   transform: scale(1.05);
 } */
 
-.cocktail-name{
-  width: 400px;
+.name-btn-wrapper {
   position: absolute;
-  color: white;
   z-index: 100;
-  left: 50%;
-  top: 100px;
-  margin-left: -200px;
-  /* text-align: center; */
-
-
-
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0,0,0,.6);
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.cocktail-name h2 {
+.cocktail-name{
+  padding: 10px 15px;
+  /* width: 400px; */
+  /* position: absolute; */
+  color: white;
+  /* z-index: 100; */
+  /* left: 50%; */
+  /* bottom: 0; */
+  /* margin-left: -200px; */
+  /* text-align: left; */
+  /* float: left; */
+}
+/* .cocktail-name h2 {
   text-align: center;
-}
+} */
 .cocktail-image-container{
   height: 400px;
   width: 600px;
@@ -61,33 +82,49 @@ html, body{
 }
 
 .cocktail-btn-container{
-  position: absolute;
+  /* position: absolute;
   left: 50%;
   margin-left: -168px;
-  bottom: 10%;
+  bottom: 10%; */
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  margin-right: 10px;
+  /* float: right; */
 }
 
 .cocktail-description {
-  top: 190px;
-  left: 15%;
+  /* top: 190px;
+  left: 15%; */
   /* margin-left: -200px; */
-  position: absolute;
-  width: 400px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 10px;
-  color: white;
+  /* position: absolute; */
+  /* width: 400px; */
+  /* margin: 0 auto; */
+  text-align: left;
+  /* font-size: 10px; */
+  padding: 10px 0;
+  color: black;
 }
-
+.comment-container {
+  padding-top: 15px;
+}
+.comments-ul {
+  padding-left: 0;
+}
+.comments-ul li span:nth-child(1){
+  min-width: 80px;
+  font-weight: bold;
+  display:inline-block;
+}
+.recipe-comment-container{
+  padding: 25px;
+}
 .recipe {
-  position: relative;
+  /* position: relative; */
   /* min-height: 300px; */
-  width: 600px;
-  margin: 0 auto;
-  text-align: center;
+  /* width: 600px; */
+  /* margin: 0 auto; */
+  /* text-align: center; */
   /* display: none; */
 }
 
@@ -106,7 +143,7 @@ html, body{
 }
 
 .like-btn-cont, .recipe-btn-cont{
-  padding: 10px;
+  padding: 5px;
 }
 
 
