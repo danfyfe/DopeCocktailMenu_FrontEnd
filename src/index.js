@@ -14,7 +14,7 @@ function renderCocktail(cocktail){
 
   cocktailWrapper.innerHTML +=
   `
-  <div id="${cocktail.id}" class="cocktail-container">
+  <div id="${cocktail.id}" class="cocktail-container" data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
   <div class="cocktail-name"><h2>${cocktail.name}</h2></div>
   <div id="cocktail-image-container" class="cocktail-image-container">
   <img src="${cocktail.img_url}">
@@ -37,7 +37,7 @@ function renderCocktail(cocktail){
     <div id="cocktail-description" class="cocktail-description">
     <p>${cocktail.description}</p>
     </div>
-    
+
     <h4>Recipe</h4>
     <p>${cocktail.recipe}</p>
     </div>
