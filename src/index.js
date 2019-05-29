@@ -76,7 +76,7 @@ mainWrapper.addEventListener("click", function(e){
     const recipe = e.target.parentElement.parentElement.parentElement.parentElement.querySelector("#recipe-comment-container")
     const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling
     const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.id)
-    // debugger
+
     if (recipe.style.display === "block") {
       recipe.style.display = "none"
     }else {
@@ -88,8 +88,10 @@ mainWrapper.addEventListener("click", function(e){
     .then(function(comments){
       comments.forEach(function(comment){
         if (comment.cocktail.id === parseInt(cocktail.id)) {
-          commentsUl.innerHTML += `
-          <li><span style="font-weight: bold; text-decoration: none;">${comment.username}</span> <span>${comment.content}</span></li>
+          commentsUl.innerHTML = `
+          <li>
+            <span style="font-weight: bold; text-decoration: none;">${comment.username}</span> <span>${comment.content}</span>
+          </li>
           `
         }
       })
