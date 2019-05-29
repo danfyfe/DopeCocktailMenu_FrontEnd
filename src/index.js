@@ -9,6 +9,7 @@ const cocktailWrapper = document.querySelector("#cocktail-wrapper")
 
 const allCocktails = []
 const allComments = []
+
 function renderCocktail(cocktail){
 
   cocktailWrapper.innerHTML +=
@@ -19,22 +20,27 @@ function renderCocktail(cocktail){
   <img src="${cocktail.img_url}">
   <div id="cocktail-btn-container" class="cocktail-btn-container">
 
-  <div class="like-num"><span id="like-btn" class="like-btn-cont"> ${cocktail.likes.length} Like(s)</span></div>
-  <div class="recipe-btn"><span id="recipe-btn" class="recipe-btn-cont" type="button" name="recipe">View Recipe</span></div>
+    <div class="like-num">
+      <span id="like-btn" class="like-btn-cont"> ${cocktail.likes.length} Like(s)</span>
+    </div>
+
+  <div class="recipe-btn"><span id="recipe-btn" class="recipe-btn-cont" type="button" name="recipe">View More</span></div>
+
   <div class="comment-num"><span id="comment-btn">${cocktail.comments.length} Comment(s)</span></div>
   </div>
   </div>
 
-  <div id="cocktail-description" class="cocktail-description">
-  <p>${cocktail.description}</p>
-  </div>
 
   <div id="recipe-comment-container" class="recipe-comment-container">
 
   <div id="recipe" class="recipe">
-  <h4>Recipe</h4>
-  <p>${cocktail.recipe}</p>
-  </div>
+    <div id="cocktail-description" class="cocktail-description">
+    <p>${cocktail.description}</p>
+    </div>
+    
+    <h4>Recipe</h4>
+    <p>${cocktail.recipe}</p>
+    </div>
 
   <div id="comment-container" class="comment-container">
 
@@ -77,18 +83,47 @@ fetch(cocktailsEndPoint)
 
 
 mainWrapper.addEventListener("click", function(e){
-  // console.log(e.target)
   e.preventDefault();
-  mainBtnContainer.style.display = 'none'
+  // mainBtnContainer.style.display = 'none'
 
   if (e.target.id === 'cozy-btn') {
-
+    cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Cozy") {
         renderCocktail(cocktail)
       }
     })
   }  // END OF COZY BTN
+
+  if (e.target.id === 'soph-btn') {
+    cocktailWrapper.innerHTML = ""
+    allCocktails.forEach(function(cocktail){
+      if (cocktail.mood.name === "Sophisticated") {
+        renderCocktail(cocktail)
+      }
+    })
+  }  // END OF SOPH BTN
+
+  if (e.target.id === 'fun-btn') {
+    cocktailWrapper.innerHTML = ""
+    allCocktails.forEach(function(cocktail){
+      if (cocktail.mood.name === "Fun") {
+        renderCocktail(cocktail)
+      }
+    })
+  }  // END OF fun BTN
+
+  if (e.target.id === 'classic-btn') {
+    cocktailWrapper.innerHTML = ""
+    allCocktails.forEach(function(cocktail){
+      if (cocktail.mood.name === "Classic") {
+        renderCocktail(cocktail)
+      }
+    })
+  }  // END OF classic BTN
+
+
+
 
   // RECIPE BTN
   if (e.target.id === "recipe-btn") {

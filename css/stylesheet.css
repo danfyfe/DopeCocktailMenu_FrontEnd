@@ -18,6 +18,10 @@
   box-shadow: 8px 8px 6px -6px black;
 }
 
+/* .cocktail-container:hover{
+  transform: scale(1.05);
+} */
+
 .cocktail-name{
   width: 400px;
   position: absolute;
@@ -27,6 +31,9 @@
   top: 100px;
   margin-left: -200px;
   /* text-align: center; */
+
+
+
 }
 .cocktail-name h2 {
   text-align: center;
@@ -85,7 +92,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-
+  background-color: black;
 }
 
 .like-btn-cont, .recipe-btn-cont{
