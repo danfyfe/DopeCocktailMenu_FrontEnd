@@ -69,8 +69,13 @@
   width: 600px;
   margin: 0 auto;
   text-align: center;
+  /* display: none; */
+}
+
+.recipe-comment-container{
   display: none;
 }
+
 
 .like-num, .comment-num, .recipe-btn {
   color: #fff;
@@ -83,4 +88,10 @@
 
 .like-btn-cont, .recipe-btn-cont{
   padding: 10px;
+}
+
+
+.comments-ul li{
+  list-style-type: none;
+
 }
