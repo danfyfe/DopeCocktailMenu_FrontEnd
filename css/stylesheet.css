@@ -5,6 +5,7 @@
 
 
 .cocktail-container{
+  /* display: none; */
   border-style: solid;
   border-radius: 10px;
   border-color: black;
@@ -39,6 +40,7 @@
 }
 .cocktail-image-container img{
   width: 100%;
+
 }
 
 .cocktail-btn-container{
