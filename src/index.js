@@ -21,7 +21,7 @@ function renderCocktail(cocktail){
 
   cocktailWrapper.innerHTML +=
   `
-  <section class="page${cocktail.id}">
+
     <div id="${cocktail.id}" class="cocktail-container">
 
       <div id="cocktail-image-container" class="cocktail-image-container">
@@ -70,7 +70,7 @@ function renderCocktail(cocktail){
         </div>
       </div>
     </div>
-    </section>
+
   `
 
 }//end of render Cocktail function
@@ -95,23 +95,14 @@ fetch(cocktailsEndPoint)
 
 mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
-  // mainBtnContainer.style.display = 'none'
 
   if (e.target.id === 'cozy-btn') {
     cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Cozy") {
         renderCocktail(cocktail)
-        $(".main").tiltedpage_scroll({
-          sectionContainer: "> section",
-          angle: 50,
-          opacity: true,
-          scale: true,
-          outAnimation: true
-        });
       }
     })
-
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
