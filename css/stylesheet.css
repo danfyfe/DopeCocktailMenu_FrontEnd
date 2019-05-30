@@ -1,8 +1,11 @@
 /* CSS */
+
+/*///// LAYOUT /////*/
 html, body{
   width: 100%;
   height: 100%;
   margin: 0;
+  background-color: #000
 }
 
 h4 {
@@ -12,22 +15,60 @@ h4 {
 form{
   margin: 10px 0;
 }
+
+button {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0 5px;
+  width: 155px;
+}
+
+button:hover {
+  color: #000;
+  border: 2px solid #f9f348;
+  background-color: #f9f348;
+
+}
+
 .main-wrapper {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
+/*///// MAIN BUTTON /////*/
 .main-btn-container{
+  width: 675px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -338px;
+  top:65%;
+}
+
+.move-aside {
+  width: 140px;
+  margin: 0;
+  left: 85%;
+  position: fixed;
+}
+
+.side {
+  display: block;
+  width: 140px;
+  margin: 15px 0;
 
 }
 
-
+/*///// COCKTAIL  /////*/
 .cocktail-container{
-  /* display: none; */
   border-style: solid;
   border-radius: 10px;
   border-color: black;
-  /* height: 400px; */
   width: 600px;
   position: relative;
   margin: 10px auto;
@@ -35,10 +76,6 @@ form{
   -moz-box-shadow: 8px 8px 6px -6px black;
   box-shadow: 8px 8px 6px -6px black;
 }
-
-/* .cocktail-container:hover{
-  transform: scale(1.05);
-} */
 
 .name-btn-wrapper {
   position: absolute;
@@ -56,19 +93,9 @@ form{
 }
 .cocktail-name{
   padding: 10px 15px;
-  /* width: 400px; */
-  /* position: absolute; */
   color: white;
-  /* z-index: 100; */
-  /* left: 50%; */
-  /* bottom: 0; */
-  /* margin-left: -200px; */
-  /* text-align: left; */
-  /* float: left; */
 }
-/* .cocktail-name h2 {
-  text-align: center;
-} */
+
 .cocktail-image-container{
   height: 400px;
   width: 600px;
@@ -82,31 +109,26 @@ form{
 }
 
 .cocktail-btn-container{
-  /* position: absolute;
-  left: 50%;
-  margin-left: -168px;
-  bottom: 10%; */
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   margin-right: 10px;
-  /* float: right; */
 }
 
 .cocktail-description {
-  /* top: 190px;
-  left: 15%; */
-  /* margin-left: -200px; */
-  /* position: absolute; */
-  /* width: 400px; */
-  /* margin: 0 auto; */
   text-align: left;
-  /* font-size: 10px; */
   padding: 10px 0;
   color: black;
 }
+
+/*///// RECIPE AND COMMENT SECTION /////*/
+
+.recipe-paragraph {
+    margin-bottom: 30px;
+}
 .comment-container {
-  padding-top: 15px;
+  padding-top: 30px;
+  border-top: 1px solid #aaa;
 }
 .comments-ul {
   padding-left: 0;
@@ -116,23 +138,18 @@ form{
   font-weight: bold;
   display:inline-block;
 }
+.comments-ul li{
+  list-style-type: none;
+
+}
+
 .recipe-comment-container{
   padding: 25px;
-}
-.recipe {
-  /* position: relative; */
-  /* min-height: 300px; */
-  /* width: 600px; */
-  /* margin: 0 auto; */
-  /* text-align: center; */
-  /* display: none; */
-}
-
-.recipe-comment-container{
   display: none;
+  background-color: #fff;
 }
 
-
+/*///// LIKE AND COMMENT STATS AND BUTTON /////*/
 .like-num, .comment-num, .recipe-btn {
   color: #fff;
   border: 1px #fff solid;
@@ -144,10 +161,4 @@ form{
 
 .like-btn-cont, .recipe-btn-cont{
   padding: 5px;
-}
-
-
-.comments-ul li{
-  list-style-type: none;
-
 }

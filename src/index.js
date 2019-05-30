@@ -5,6 +5,9 @@ const commentsEndPoint = 'http://localhost:3000/api/v1/comments'
 const cocktailContainer = document.querySelector("#cocktail-container")
 const mainWrapper = document.querySelector("#main-wrapper")
 const mainBtnContainer = document.querySelector("#main-btn-container")
+const mainBtns = document.querySelectorAll("button")
+// const mainBtns = document.getElementsByClassName("mood-btn")
+console.log(mainBtns)
 const cocktailWrapper = document.querySelector("#cocktail-wrapper")
 
 const allCocktails = []
@@ -58,16 +61,21 @@ function renderCocktail(cocktail){
           <p>${cocktail.recipe}</p>
         </div>
 
-        <div id="comment-container" class="comment-container">
-          <h4>What do you think?</h4>
-          <form>
-            <input id="username" type="text" name="username" placeholder="Enter Name Here...">
-            <input id="content" type="text" name="content" placeholder="Enter Comment Here...">
-            <input type="submit" value="Submit">
-          </form>
-          <ul id="comments-ul" class="comments-ul">
-          </ul>
-        </div>
+
+        <h4>Recipe</h4>
+        <p class="recipe-paragraph">${cocktail.recipe}</p>
+      </div>
+
+      <div id="comment-container" class="comment-container">
+        <h4>What do you think?</h4>
+        <form>
+          <input id="username" type="text" name="username" placeholder="Enter Name Here...">
+          <input id="content" type="text" name="content" placeholder="Enter Comment Here...">
+          <input type="submit" value="Submit">
+        </form>
+        <ul id="comments-ul" class="comments-ul">
+        </ul>
+
       </div>
     </div>
 
@@ -80,8 +88,6 @@ function renderComment(comment){
   <li><span style="font-weight: bold; text-decoration: none;">${comment.username}</span> <span>${comment.content}</span></li>
   `
 }
-
-
 
 fetch(cocktailsEndPoint)
 .then(resp => resp.json())
@@ -97,6 +103,11 @@ mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
 
   if (e.target.id === 'cozy-btn') {
+    mainBtnContainer.className = "main-btn-container move-aside"
+    mainBtns.forEach(function(btn){
+      btn.className = "mood-btn side"
+    })
+
     cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Cozy") {
@@ -106,6 +117,10 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
+    mainBtnContainer.className = "main-btn-container move-aside"
+    mainBtns.forEach(function(btn){
+      btn.className = "mood-btn side"
+    })
     cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Sophisticated") {
@@ -115,6 +130,10 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF SOPH BTN
 
   if (e.target.id === 'fun-btn') {
+    mainBtnContainer.className = "main-btn-container move-aside"
+    mainBtns.forEach(function(btn){
+      btn.className = "mood-btn side"
+    })
     cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Fun") {
@@ -124,6 +143,10 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF fun BTN
 
   if (e.target.id === 'classic-btn') {
+    mainBtnContainer.className = "main-btn-container move-aside"
+    mainBtns.forEach(function(btn){
+      btn.className = "mood-btn side"
+    })
     cocktailWrapper.innerHTML = ""
     allCocktails.forEach(function(cocktail){
       if (cocktail.mood.name === "Classic") {
@@ -138,7 +161,7 @@ mainWrapper.addEventListener("click", function(e){
   // RECIPE BTN
   if (e.target.id === "recipe-btn") {
     const recipe = e.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
-    // debugger
+
     const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling
 
     const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id)
@@ -165,6 +188,7 @@ mainWrapper.addEventListener("click", function(e){
 
   // LIKE BTN
   if (e.target.id === "like-btn") {
+
 
     const cocktail = e.target.parentElement.parentElement.parentElement.parentElement.parentElement
 
@@ -222,3 +246,4 @@ mainWrapper.addEventListener("click", function(e){
 
 
 }) // END OF CLICK EVENT LISTENER
+// work
