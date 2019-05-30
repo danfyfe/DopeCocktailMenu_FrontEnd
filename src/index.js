@@ -13,41 +13,54 @@ const cocktailWrapper = document.querySelector("#cocktail-wrapper")
 const allCocktails = []
 const allComments = []
 
+
+
+
+
+
+
+
 function renderCocktail(cocktail){
 
   cocktailWrapper.innerHTML +=
   `
-  <div id="${cocktail.id}" class="cocktail-container">
 
-    <div id="cocktail-image-container" class="cocktail-image-container">
-      <img src="${cocktail.img_url}">
-      <div class="name-btn-wrapper">
-        <div class="cocktail-name">
-          <h2>${cocktail.name}</h2>
+    <div id="${cocktail.id}" class="cocktail-container">
+
+      <div id="cocktail-image-container" class="cocktail-image-container">
+        <img src="${cocktail.img_url}">
+        <div class="name-btn-wrapper">
+          <div class="cocktail-name">
+            <h2>${cocktail.name}</h2>
+          </div>
+          <div id="cocktail-btn-container" class="cocktail-btn-container">
+            <div class="like-num">
+              <span id="like-btn" class="like-btn-cont"> ${cocktail.likes.length} Like(s)</span>
+            </div>
+            <div class="recipe-btn">
+              <span id="recipe-btn" class="recipe-btn-cont" type="button" name="recipe">View More</span>
+            </div>
+            <div class="comment-num">
+              <span id="comment-btn">${cocktail.comments.length} Comment(s)</span>
+            </div>
+          </div>
         </div>
-        <div id="cocktail-btn-container" class="cocktail-btn-container">
-          <div class="like-num">
-            <span id="like-btn" class="like-btn-cont"> ${cocktail.likes.length} Like(s)</span>
-          </div>
-          <div class="recipe-btn">
-            <span id="recipe-btn" class="recipe-btn-cont" type="button" name="recipe">View More</span>
-          </div>
-          <div class="comment-num">
-            <span id="comment-btn">${cocktail.comments.length} Comment(s)</span>
-          </div>
-        </div>
+
       </div>
 
-    </div>
 
+      <div id="recipe-comment-container" class="recipe-comment-container">
 
-    <div id="recipe-comment-container" class="recipe-comment-container">
+        <div id="recipe" class="recipe">
+          <div id="cocktail-description" class="cocktail-description">
+            <h4>Description</h4>
+            <p class="recipe-paragraph">${cocktail.description}</p>
+          </div>
 
-      <div id="recipe" class="recipe">
-        <div id="cocktail-description" class="cocktail-description">
-          <h4>Description</h4>
-          <p>${cocktail.description}</p>
+          <h4>Recipe</h4>
+          <p>${cocktail.recipe}</p>
         </div>
+
 
         <h4>Recipe</h4>
         <p class="recipe-paragraph">${cocktail.recipe}</p>
@@ -62,10 +75,12 @@ function renderCocktail(cocktail){
         </form>
         <ul id="comments-ul" class="comments-ul">
         </ul>
+
       </div>
     </div>
-  </div>
+
   `
+
 }//end of render Cocktail function
 
 function renderComment(comment){
@@ -86,7 +101,6 @@ fetch(cocktailsEndPoint)
 
 mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
-  // mainBtnContainer.style.display = 'none'
 
   if (e.target.id === 'cozy-btn') {
     mainBtnContainer.className = "main-btn-container move-aside"
@@ -146,9 +160,6 @@ mainWrapper.addEventListener("click", function(e){
 
   // RECIPE BTN
   if (e.target.id === "recipe-btn") {
-    // const recipe = e.target.parentElement.parentElement.parentElement.parentElement.querySelector("#recipe-comment-container")
-    // const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling
-    // const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.id)
     const recipe = e.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
 
     const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling
@@ -177,7 +188,10 @@ mainWrapper.addEventListener("click", function(e){
 
   // LIKE BTN
   if (e.target.id === "like-btn") {
+
+
     const cocktail = e.target.parentElement.parentElement.parentElement.parentElement.parentElement
+
 
     let likeNum = parseInt(e.target.innerText)
     ++likeNum
