@@ -1,5 +1,58 @@
 /* CSS */
 
+
+
+.welcome{
+  width: 675px;
+  margin: 0 auto;
+  position: absolute;
+  left: 43%;
+  margin-left: -338px;
+  top:65%;
+
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0 5px;
+  width: 155px;
+  text-align: center;
+
+  top:100px;
+  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.5.s; /* Firefox < 16 */
+  -ms-animation: fadein 1.5s; /* Internet Explorer */
+  -o-animation: fadein 1.5s; /* Opera < 12.1 */
+  animation: fadein 1.5s;
+}
+
+/* animations */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
 /*///// LAYOUT /////*/
 html, body{
   width: 100%;
@@ -75,6 +128,11 @@ button:hover {
   -webkit-box-shadow: 8px 8px 6px -6px black;
   -moz-box-shadow: 8px 8px 6px -6px black;
   box-shadow: 8px 8px 6px -6px black;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -ms-animation: fadein 1s;
+  -o-animation: fadein 1s;
+  animation: fadein 1s;
 }
 
 .name-btn-wrapper {
@@ -105,6 +163,7 @@ button:hover {
 }
 .cocktail-image-container img{
   width: 100%;
+  border-radius: 5px;
 
 }
 
@@ -148,6 +207,8 @@ button:hover {
   padding: 25px;
   display: none;
   background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /*///// LIKE AND COMMENT STATS AND BUTTON /////*/
@@ -162,4 +223,17 @@ button:hover {
 
 .like-btn-cont, .recipe-btn-cont{
   padding: 5px;
+}
+
+
+
+
+.video{
+  /* position: relative; */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+
 }
