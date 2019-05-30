@@ -47,7 +47,7 @@ function choosePrompt(){
   welcomeDiv.id = "welcome"
   mainWrapper.appendChild(welcomeDiv)
   welcomeDiv.innerHTML = `
-  <h1>Please select a mood</h1>
+  <h2>Please select a mood</h2>
   `
 }
 
@@ -151,7 +151,7 @@ mainWrapper.addEventListener("click", function(e){
 
   if (e.target.id === 'fun-btn') {
     video.src = "videos/fun.mp4"
-    
+
     document.documentElement.scrollTop = 0;
     removeWelcome()
     renderCocktails(allCocktails,"Fun")
