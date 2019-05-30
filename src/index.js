@@ -11,6 +11,20 @@ const welcomeDiv = document.querySelector("#welcome")
 const allCocktails = []
 const allComments = []
 const video = document.querySelector("#video")
+const soundButtonContainer = document.querySelector("#sound-btn-container")
+
+
+
+
+
+//renders sound button
+function renderSoundButton(){
+  const soundButton = document.createElement("button")
+  soundButton.id = "sound-btn"
+  soundButton.className = "sound-btn"
+  soundButton.innerText = "Sound"
+  soundButtonContainer.appendChild(soundButton)
+}// end of sound button function
 
 //renders cocktails by moodName
 function renderCocktails(cocktails,moodName){
@@ -136,9 +150,10 @@ mainWrapper.addEventListener("click", function(e){
   if (e.target.id === 'cozy-btn') {
     video.src = "videos/cozy.mp4"
     document.documentElement.scrollTop = 0;
-    removeWelcome()
-    renderCocktails(allCocktails,"Cozy")
-    moveButtonsAside()
+    removeWelcome();
+    renderCocktails(allCocktails,"Cozy");
+    moveButtonsAside();
+    renderSoundButton();
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
@@ -147,23 +162,26 @@ mainWrapper.addEventListener("click", function(e){
     removeWelcome();
     moveButtonsAside();
     renderCocktails(allCocktails,"Sophisticated")
+    renderSoundButton();
   }  // END OF SOPH BTN
 
   if (e.target.id === 'fun-btn') {
     video.src = "videos/fun.mp4"
 
     document.documentElement.scrollTop = 0;
-    removeWelcome()
-    renderCocktails(allCocktails,"Fun")
+    removeWelcome();
+    renderCocktails(allCocktails,"Fun");
     moveButtonsAside();
+    renderSoundButton();
   }  // END OF fun BTN
 
   if (e.target.id === 'classic-btn') {
     video.src = "videos/classic.mp4"
     document.documentElement.scrollTop = 0;
-    removeWelcome()
-    renderCocktails(allCocktails,"Classic")
+    removeWelcome();
+    renderCocktails(allCocktails,"Classic");
     moveButtonsAside();
+    renderSoundButton();
   }  // END OF classic BTN
 
   // RECIPE BTN
@@ -247,6 +265,14 @@ mainWrapper.addEventListener("click", function(e){
     form.reset()
   }// end of submit target
 
+
+if (e.target.id === "sound-btn") {
+  if (video.muted === true) {
+    video.muted = false
+  }else if(video.muted === false) {
+    video.muted = true
+  }
+}// end of sound button
 
 
 

@@ -142,6 +142,14 @@ button:hover {
   position: fixed;
 }
 
+.sound-btn {
+  width: 140px;
+  margin: 0;
+  left: 85%;
+  position: fixed;
+  opacity: 0.4;
+}
+
 .side {
   display: block;
   width: 140px;
@@ -220,7 +228,7 @@ button:hover {
 .comment-container {
   padding-top: 30px;
   border-top: 1px solid #aaa;
-  background-color: #fff;
+  background-color: #fffff2;
 }
 .comments-ul {
   padding-left: 0;
@@ -238,7 +246,7 @@ button:hover {
 .recipe-comment-container{
   padding: 25px;
   display: none;
-  background-color: #fff;
+  background-color: #fffff2;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
