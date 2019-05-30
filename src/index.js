@@ -6,20 +6,55 @@ const cocktailContainer = document.querySelector("#cocktail-container")
 const mainWrapper = document.querySelector("#main-wrapper")
 const mainBtnContainer = document.querySelector("#main-btn-container")
 const mainBtns = document.querySelectorAll("button")
-// const mainBtns = document.getElementsByClassName("mood-btn")
-console.log(mainBtns)
 const cocktailWrapper = document.querySelector("#cocktail-wrapper")
-
+const welcomeDiv = document.querySelector("#welcome")
 const allCocktails = []
 const allComments = []
+const video = document.querySelector("#video")
 
+//renders cocktails by moodName
+function renderCocktails(cocktails,moodName){
+  cocktailWrapper.innerHTML = ""
+  cocktails.forEach(function(cocktail){
+    if (cocktail.mood.name === moodName) {
+      renderCocktail(cocktail)
+    }
+  })
+}
 
+// moves main buttons to bottom right of screen
+function moveButtonsAside(){
+  mainBtnContainer.className = "main-btn-container move-aside"
+  mainBtns.forEach(function(btn){
+    btn.className = "mood-btn side"
+  })
+}
 
+//removes welcome div
+function removeWelcome(){
+  const welcomeDiv = document.querySelector("#welcome")
+  if (welcomeDiv) {
+    welcomeDiv.remove()
+  }
+}
 
+// changes welcome message to choose mood prompt
+function choosePrompt(){
+  let welcomeDiv = document.querySelector("#welcome")
+  welcomeDiv.remove()
+  welcomeDiv = document.createElement('div')
+  welcomeDiv.className = "welcome"
+  welcomeDiv.id = "welcome"
+  mainWrapper.appendChild(welcomeDiv)
+  welcomeDiv.innerHTML = `
+  <h1>Please select a mood</h1>
+  `
+}
 
+//timer for welcome message
+setTimeout(choosePrompt,1800)
 
-
-
+// fetches all cocktails and stores them in allCocktails variable
 function renderCocktail(cocktail){
 
   cocktailWrapper.innerHTML +=
@@ -78,6 +113,7 @@ function renderCocktail(cocktail){
 
 }//end of render Cocktail function
 
+
 function renderComment(comment){
   commentsUl.innerHTML += `
   <li><span style="font-weight: bold; text-decoration: none;">${comment.username}</span> <span>${comment.content}</span></li>
@@ -98,60 +134,37 @@ mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
 
   if (e.target.id === 'cozy-btn') {
-    mainBtnContainer.className = "main-btn-container move-aside"
-    mainBtns.forEach(function(btn){
-      btn.className = "mood-btn side"
-    })
-
-    cocktailWrapper.innerHTML = ""
-    allCocktails.forEach(function(cocktail){
-      if (cocktail.mood.name === "Cozy") {
-        renderCocktail(cocktail)
-      }
-    })
+    video.src = "videos/cozy.mp4"
+    document.documentElement.scrollTop = 0;
+    removeWelcome()
+    renderCocktails(allCocktails,"Cozy")
+    moveButtonsAside()
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
-    mainBtnContainer.className = "main-btn-container move-aside"
-    mainBtns.forEach(function(btn){
-      btn.className = "mood-btn side"
-    })
-    cocktailWrapper.innerHTML = ""
-    allCocktails.forEach(function(cocktail){
-      if (cocktail.mood.name === "Sophisticated") {
-        renderCocktail(cocktail)
-      }
-    })
+    video.src = "videos/soph.mp4"
+    document.documentElement.scrollTop = 0;
+    removeWelcome();
+    moveButtonsAside();
+    renderCocktails(allCocktails,"Sophisticated")
   }  // END OF SOPH BTN
 
   if (e.target.id === 'fun-btn') {
-    mainBtnContainer.className = "main-btn-container move-aside"
-    mainBtns.forEach(function(btn){
-      btn.className = "mood-btn side"
-    })
-    cocktailWrapper.innerHTML = ""
-    allCocktails.forEach(function(cocktail){
-      if (cocktail.mood.name === "Fun") {
-        renderCocktail(cocktail)
-      }
-    })
+    video.src = "videos/fun.mp4"
+    
+    document.documentElement.scrollTop = 0;
+    removeWelcome()
+    renderCocktails(allCocktails,"Fun")
+    moveButtonsAside();
   }  // END OF fun BTN
 
   if (e.target.id === 'classic-btn') {
-    mainBtnContainer.className = "main-btn-container move-aside"
-    mainBtns.forEach(function(btn){
-      btn.className = "mood-btn side"
-    })
-    cocktailWrapper.innerHTML = ""
-    allCocktails.forEach(function(cocktail){
-      if (cocktail.mood.name === "Classic") {
-        renderCocktail(cocktail)
-      }
-    })
+    video.src = "videos/classic.mp4"
+    document.documentElement.scrollTop = 0;
+    removeWelcome()
+    renderCocktails(allCocktails,"Classic")
+    moveButtonsAside();
   }  // END OF classic BTN
-
-
-
 
   // RECIPE BTN
   if (e.target.id === "recipe-btn") {
@@ -161,7 +174,6 @@ mainWrapper.addEventListener("click", function(e){
     const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling
 
     const cocktail = document.getElementById(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id)
-
 
     if (recipe.style.display === "block") {
       recipe.style.display = "none"
