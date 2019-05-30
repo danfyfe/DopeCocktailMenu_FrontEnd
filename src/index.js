@@ -57,11 +57,6 @@ function renderCocktail(cocktail){
             <p class="recipe-paragraph">${cocktail.description}</p>
           </div>
 
-          <h4>Recipe</h4>
-          <p>${cocktail.recipe}</p>
-        </div>
-
-
         <h4>Recipe</h4>
         <p class="recipe-paragraph">${cocktail.recipe}</p>
       </div>
@@ -160,6 +155,7 @@ mainWrapper.addEventListener("click", function(e){
 
   // RECIPE BTN
   if (e.target.id === "recipe-btn") {
+    // debugger
     const recipe = e.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
 
     const commentsUl = recipe.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling

@@ -129,6 +129,7 @@ button:hover {
 .comment-container {
   padding-top: 30px;
   border-top: 1px solid #aaa;
+  background-color: #fff;
 }
 .comments-ul {
   padding-left: 0;
