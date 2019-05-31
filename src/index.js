@@ -159,6 +159,7 @@ mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
 
   if (e.target.id === 'cozy-btn') {
+    mainWrapper.className = "main-wrapper-mood"
     title.remove();
     video.src = "videos/cozy.mp4"
     document.documentElement.scrollTop = 0;
@@ -169,6 +170,7 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
+    mainWrapper.className = "main-wrapper-mood"
     title.remove();
     video.src = "videos/soph.mp4"
     document.documentElement.scrollTop = 0;
@@ -179,6 +181,7 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF SOPH BTN
 
   if (e.target.id === 'fun-btn') {
+    mainWrapper.className = "main-wrapper-mood"
     title.remove();
     video.src = "videos/fun.mp4"
     document.documentElement.scrollTop = 0;
@@ -189,6 +192,7 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF fun BTN
 
   if (e.target.id === 'classic-btn') {
+    mainWrapper.className = "main-wrapper-mood"
     title.remove();
     video.src = "videos/classic.mp4"
     document.documentElement.scrollTop = 0;
