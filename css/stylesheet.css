@@ -1,16 +1,19 @@
 /* CSS */
 
 .main-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
+ width: 100%;
+ height: 100%;
+ position: relative;
+ background-image: url("https://images.pexels.com/photos/1459091/pexels-photo-1459091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: top;
 }
+
 
 .welcome{
   /* width: 675px; */
   margin: 0 auto;
-
-
   color: #fff;
   background: transparent;
   border: 2px solid #fff;
@@ -24,7 +27,6 @@
   margin-left: -90px;
   top:65%;
   text-align: center;
-
   top:100px;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -274,7 +276,6 @@ button:hover {
 
 
 .video{
-  /* position: relative; */
   position: fixed;
   right: 0;
   bottom: 0;
