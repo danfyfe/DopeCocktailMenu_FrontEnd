@@ -12,6 +12,7 @@ const allCocktails = []
 const allComments = []
 const video = document.querySelector("#video")
 const soundButtonContainer = document.querySelector("#sound-btn-container")
+const title = document.querySelector("#moody-cocktails")
 
 
 
@@ -65,8 +66,18 @@ function choosePrompt(){
   `
 }
 
+//function for main button display for fade in
+mainBtnContainer.style.display = "none"
+function changeMainBtnContainerDisplay(){
+  mainBtnContainer.style.display = "block"
+}
+
 //timer for welcome message
 setTimeout(choosePrompt,1800)
+
+//timer for main button fade in
+setTimeout(changeMainBtnContainerDisplay,2800)
+
 
 // fetches all cocktails and stores them in allCocktails variable
 function renderCocktail(cocktail){
@@ -148,6 +159,7 @@ mainWrapper.addEventListener("click", function(e){
   e.preventDefault();
 
   if (e.target.id === 'cozy-btn') {
+    title.remove();
     video.src = "videos/cozy.mp4"
     document.documentElement.scrollTop = 0;
     removeWelcome();
@@ -157,6 +169,7 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF COZY BTN
 
   if (e.target.id === 'soph-btn') {
+    title.remove();
     video.src = "videos/soph.mp4"
     document.documentElement.scrollTop = 0;
     removeWelcome();
@@ -166,8 +179,8 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF SOPH BTN
 
   if (e.target.id === 'fun-btn') {
+    title.remove();
     video.src = "videos/fun.mp4"
-
     document.documentElement.scrollTop = 0;
     removeWelcome();
     renderCocktails(allCocktails,"Fun");
@@ -176,6 +189,7 @@ mainWrapper.addEventListener("click", function(e){
   }  // END OF fun BTN
 
   if (e.target.id === 'classic-btn') {
+    title.remove();
     video.src = "videos/classic.mp4"
     document.documentElement.scrollTop = 0;
     removeWelcome();
