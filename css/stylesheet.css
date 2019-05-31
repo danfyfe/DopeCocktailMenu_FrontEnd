@@ -26,11 +26,11 @@
   text-align: center;
 
   top:100px;
-  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 1.5.s; /* Firefox < 16 */
-  -ms-animation: fadein 1.5s; /* Internet Explorer */
-  -o-animation: fadein 1.5s; /* Opera < 12.1 */
-  animation: fadein 1.5s;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 .moody-cocktails{
@@ -132,13 +132,18 @@ button:hover {
   left: 50%;
   margin-left: -338px;
   top:80%;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 .move-aside {
   width: 140px;
   margin: 0;
   left: 85%;
-  top: 70%;
+  top: 65%;
   position: fixed;
 }
 
@@ -147,7 +152,7 @@ button:hover {
   margin: 0;
   left: 85%;
   position: fixed;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .side {
@@ -168,11 +173,11 @@ button:hover {
   -webkit-box-shadow: 8px 8px 6px -6px black;
   -moz-box-shadow: 8px 8px 6px -6px black;
   box-shadow: 8px 8px 6px -6px black;
-  -webkit-animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  -ms-animation: fadein 1s;
-  -o-animation: fadein 1s;
-  animation: fadein 1s;
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
 }
 
 .name-btn-wrapper {
@@ -275,5 +280,5 @@ button:hover {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-
+  opacity: 0.7;
 }
