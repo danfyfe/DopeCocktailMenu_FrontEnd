@@ -3,8 +3,8 @@
 By: Soyeong Oh and Dan Fyfe
 
 **Setup**
-- Complete the initial setup in the [Dope Cocktail Menu Back End](https://github.com/danfyfe/DopeCocktailMenu_BackEnd)
-- In your terminal, while inside the Cook This Front End directory, run 'open index.html'
+- Complete the initial setup in [Dope Cocktail Menu Back End](https://github.com/danfyfe/DopeCocktailMenu_BackEnd)
+- In your terminal, while inside the Dope Cocktail Menu Front End directory, run 'open index.html'
 
 **Basic Usage**
 - The user selects a mood, which transforms the page and displays cocktail recipes that fit the mood.
